@@ -1,0 +1,293 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+body {
+  background-color: #fefcf9;
+  color: #333;
+  line-height: 1.6;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1px 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.logo img {
+  width: 100px;
+  height: auto;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.menu-toggle div {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #6c8c63;
+}
+
+.mobile-kategori {
+  display: none;
+}
+/* Main Area */
+main {
+  display: flex;
+  gap: 20px;
+  flex-wrap: nowrap;
+  justify-content: start;
+  flex-direction: row;
+}
+.kolom:nth-child(1),
+.kolom:nth-child(3) {
+  order: 0;
+  height: auto;
+}
+.kolom:nth-child(2) {
+  flex-grow: 1;
+  height: auto;
+  order: 0;
+}
+#aside {
+  width: 100%;
+  height: 500px;
+  display: block;
+  padding: 10px 20px;
+}
+#aside li {
+  list-style: none;
+  padding: 10px 0;
+}
+#aside a {
+  text-decoration: none;
+  color: #333;
+}
+#aside a:hover {
+  color: #6c8c63;
+}
+#content {
+  background-color: #eee;
+  width: 100%;
+}
+#content img {
+  width: 800px;
+  height: auto;
+  border-radius: 10px;
+}
+#content a {
+  text-decoration: none;
+  color: #333;
+}
+#content h3:hover {
+  color: #6c8c63;
+  cursor: pointer;
+}
+#content .card {
+  border-bottom: 1px #333 solid;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+#promosi {
+  width: 100%;
+  padding: 0 20px;
+}
+#promosi img {
+  width: 100%;
+  height: auto;
+}
+
+/* Main Area */
+
+/* article area */
+.artikel {
+  padding: 10px 20px;
+  margin: auto;
+}
+.kotak {
+  width: 100%;
+  /* display: flex; */
+  padding: 10px 0;
+}
+.artikel1 {
+  display: flex;
+  gap: 20px;
+  cursor: pointer;
+}
+.artikel1 img {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+}
+.bungkusan {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  /* gap: 20px; */
+}
+.bungkusan h3:hover {
+  color: #6c8c63;
+}
+
+/* article area */
+footer {
+  background-color: #333;
+  width: 100%;
+  height: auto;
+  padding: 10px 20px;
+  display: flex;
+}
+.item {
+  padding-bottom: 50px;
+  width: 100%;
+}
+.item h3 {
+  color: white;
+  padding-bottom: 10px;
+}
+.item p {
+  color: white;
+}
+.item li {
+  padding-bottom: 10px;
+  list-style: none;
+}
+.item a {
+  text-decoration: none;
+  color: white;
+}
+.item a:hover {
+  color: #6c8c63;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  nav {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+    display: none;
+  }
+
+  nav.active {
+    display: flex;
+    animation: masuk 1s;
+  }
+  @keyframes masuk {
+    0% {
+      transform: translateY(-100px);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(10px);
+    }
+  }
+  @keyframes keluar {
+    from {
+      opacity: 1;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-100px);
+    }
+  }
+
+  nav a {
+    padding: 5px 20px;
+    border-bottom: 1px solid #eee;
+  }
+
+  nav h4 {
+    margin: auto;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+
+  nav a:hover {
+    color: #6c8c63;
+  }
+
+  .mobile-kategori {
+    display: grid;
+    padding-bottom: 20px;
+    border-top: 1px solid #ddd;
+  }
+  .mobile-kategori a {
+    padding: 5px 20px;
+    display: block;
+    text-decoration: none;
+    color: #333;
+  }
+  .mobile-kategori .container-kategori {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+  main {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #aside {
+    display: none;
+  }
+  #content {
+    padding: 10px 20px;
+  }
+  #content img {
+    width: 100%;
+    height: auto;
+  }
+  .artikel1 {
+    display: block;
+  }
+  .artikel1 img {
+    width: 100%;
+    height: auto;
+  }
+  footer {
+    display: block;
+  }
+}
